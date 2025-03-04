@@ -9,7 +9,7 @@ int main() {
 	cout << "Enter coefficients";
 	cin >> coefs.a >> coefs.b >> coefs.c;
 
-	Roots roots = IsQuadratic(coefs);
+	Roots roots = SolveEqualation(coefs);
 
 	if (roots.count == 0) {
 		cout << "Equalation has no roots";

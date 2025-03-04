@@ -9,7 +9,7 @@ Roots SolveLinearEq(Coefficients coef) {
 }
 
 double FindDiscr(Coefficients c) {
-	double discriminant = c.b * c.b - 4 * c.a * c.c;
+	double discriminant = c.b * c.b - 4.0 * c.a * c.c;
 	return discriminant;
 }
 
@@ -21,18 +21,18 @@ Roots SolveQuadratic(Coefficients coef) {
 	}
 	if (Disc == 0) {
 		root.count = 1;
-		root.x1 = -coef.b / (2 * coef.a);
+		root.x1 = -coef.b / (2.0 * coef.a);
 	}
 	if (Disc > 0) {
 		root.count = 2;
-		root.x1 = (-coef.b - sqrt(Disc)) / (2 * coef.a);
-		root.x2 = (-coef.b + sqrt(Disc)) / (2 * coef.a);
+		root.x1 = (-coef.b - sqrt(Disc)) / (2.0 * coef.a);
+		root.x2 = (-coef.b + sqrt(Disc)) / (2.0 * coef.a);
 	}
 
 	return root;
 }
 
-Roots IsQuadratic(Coefficients coef) {
+Roots SolveEqualation(Coefficients coef) {
 	Roots roots;
 	if (coef.a == 0) {
 		roots = SolveLinearEq(coef);
